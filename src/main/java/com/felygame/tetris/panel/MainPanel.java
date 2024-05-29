@@ -1,6 +1,4 @@
-package com.felygame.tetris.com.felygame.tetris.page;
-
-import com.felygame.tetris.operation.object.RectangleOperationObject;
+package com.felygame.tetris.panel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,9 +11,10 @@ public class MainPanel {
         BorderFactory.createEmptyBorder(50, 100, 50, 100),
         BorderFactory.createLineBorder(Color.RED)
     ));
-    mainPanel.add(RectangleOperationObject.create(1, 1));
+    mainPanel.add(ObjectPanel.create());
     mainPanel.add(Box.createVerticalGlue());
-    mainPanel.add(RectangleOperationObject.create(1, 10));
+    mainPanel.add(ContainerPanel.create());
     return mainPanel;
   }
+
 }

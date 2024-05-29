@@ -1,6 +1,6 @@
 package com.felygame.tetris;
 
-import com.felygame.tetris.com.felygame.tetris.page.MainPanel;
+import com.felygame.tetris.panel.MainPanel;
 
 import javax.swing.*;
 import java.awt.*;
