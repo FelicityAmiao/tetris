@@ -1,14 +1,11 @@
 package com.felygame.tetris.operation.object;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class BlockOperationObject extends JPanel {
   public static JPanel create() {
-    JPanel blockOperationObject = new BlockOperationObject();
-    blockOperationObject.setBorder(new EmptyBorder(0, 0, 0, 0));
-    return blockOperationObject;
+    return new BlockOperationObject();
   }
 
   @Override
