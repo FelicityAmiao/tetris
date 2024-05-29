@@ -1,11 +1,11 @@
-package com.felygame.tetris.operation.object;
+package com.felygame.tetris.block;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class BlockOperationObject extends JPanel {
+public class Block extends JPanel {
   public static JPanel create() {
-    return new BlockOperationObject();
+    return new Block();
   }
 
   @Override

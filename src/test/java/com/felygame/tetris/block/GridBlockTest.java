@@ -1,4 +1,4 @@
-package com.felygame.tetris.operation.object;
+package com.felygame.tetris.block;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,14 +8,14 @@ import static javax.swing.BoxLayout.X_AXIS;
 import static javax.swing.BoxLayout.Y_AXIS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RectangleOperationObjectTest {
+class GridBlockTest {
 
   @Test
   public void should_return_one_panel_with_3_subPanel_when_call_create_given_row_1_col_3() {
     int row = 1;
     int col = 3;
 
-    JPanel result = RectangleOperationObject.create(row, col);
+    JPanel result = GridBlock.create(row, col);
 
     assertEquals(1, result.getComponentCount());
     assertEquals(3, ((JPanel) result.getComponent(0)).getComponentCount());
@@ -26,7 +26,7 @@ class RectangleOperationObjectTest {
     int row = 1;
     int col = 3;
 
-    JPanel result = RectangleOperationObject.create(row, col);
+    JPanel result = GridBlock.create(row, col);
 
     assertEquals(Y_AXIS, ((BoxLayout) result.getLayout()).getAxis());
     JPanel resultRow = (JPanel) result.getComponent(0);
