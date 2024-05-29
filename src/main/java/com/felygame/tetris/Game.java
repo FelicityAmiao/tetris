@@ -9,7 +9,7 @@ public class Game {
     frame.setSize(500, 600);
     frame.setLocationRelativeTo(null);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.add(RectangleOperationObject.create(1, 3));
+    frame.add(RectangleOperationObject.create(1, 1));
     frame.setVisible(true);
   }
 }
