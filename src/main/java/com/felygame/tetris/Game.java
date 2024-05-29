@@ -1,7 +1,6 @@
 package com.felygame.tetris;
 
 import com.felygame.tetris.operation.object.RectangleOperationObject;
-
 import javax.swing.*;
 
 public class Game {
