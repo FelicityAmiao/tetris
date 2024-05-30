@@ -20,7 +20,7 @@ public class KeyEventHelper {
     put(KEY_DOWN, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), jPanel.getY() + speed));
     put(KEY_LEFT, (jPanel, speed) -> jPanel.setLocation(jPanel.getX() - speed, jPanel.getY()));
     put(KEY_RIGHT, (jPanel, speed) -> jPanel.setLocation(jPanel.getX() + speed, jPanel.getY()));
-    put(KEY_SPACE, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), jPanel.getY() + speed));
+    put(KEY_SPACE, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), speed));
   }};
 
   public static void bindKeyEvent(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel> function) {

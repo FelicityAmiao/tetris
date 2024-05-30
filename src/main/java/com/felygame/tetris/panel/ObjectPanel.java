@@ -11,6 +11,7 @@ import static com.felygame.tetris.enums.Color.LIGHT_DARK_ORIGIN;
 
 public class ObjectPanel {
 
+  public static final int TOTAL_HEIGHT = 501;
   public static final int Y_SPEED = 30;
   private static final int X_SPEED = 30;
 
@@ -45,10 +46,10 @@ public class ObjectPanel {
   }
 
   private static void bindKeyEvents(JPanel objectPanel) {
-    KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_DOWN, Y_SPEED, detectReachContainer);
+    KeyEventHelper.bindKeyEventTimer(objectPanel, KeyEventHelper.KEY_DOWN, Y_SPEED, detectReachContainer);
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_LEFT, X_SPEED, detectReachContainer);
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_RIGHT, X_SPEED, detectReachContainer);
-    KeyEventHelper.bindKeyEventTimer(objectPanel, KeyEventHelper.KEY_SPACE, Y_SPEED, detectReachContainer);
+    KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_SPACE, TOTAL_HEIGHT, detectReachContainer);
   }
 
 }
