@@ -4,5 +4,8 @@ My First Game: Remake Tetris by MVP every release.
    - Control Object: One Block
    - Player Operation: Down
    - Game Clear: Move control block drop into container block, then win the game.
-2. Release 2: Tetris-x-0.2.jar
-   - Container: 
+2. Release 2: Tetris-Puzzle-0.2.jar
+   - Container: Two Block
+   - Control Object: One Block Per Time
+   - Player Operation: Down, Left, Right
+   - Game Clear: Move control block to fill container block, then win the game.
