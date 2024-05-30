@@ -12,6 +12,8 @@ import static com.felygame.tetris.enums.Color.LIGHT_DARK_ORIGIN;
 public class ObjectPanel {
 
   public static final int Y_SPEED = 30;
+  private static final int X_SPEED = 30;
+
   private static final Consumer<JPanel> detectReachContainer = (jpanel -> {
     Container parent = jpanel.getParent();
     if (parent == null) {
@@ -39,6 +41,7 @@ public class ObjectPanel {
     objectPanel.add(Box.createRigidArea(new Dimension(Block.WIDTH,  Block.HEIGHT)));
     objectPanel.setOpaque(false);
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_DOWN, Y_SPEED, detectReachContainer);
+    KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_LEFT, X_SPEED, null);
     return objectPanel;
   }
 
