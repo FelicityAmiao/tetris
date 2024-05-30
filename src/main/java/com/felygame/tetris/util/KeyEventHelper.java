@@ -12,16 +12,16 @@ public class KeyEventHelper {
   public static final String KEY_DOWN = "DOWN";
 
   private static final Map<String, BiConsumer<JPanel, Integer>> ACTIONS = new HashMap<>(){{
-    put(KEY_DOWN, (objectPanel, speed) -> objectPanel.setLocation(objectPanel.getX(), objectPanel.getY() + speed));
+    put(KEY_DOWN, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), jPanel.getY() + speed));
   }};
 
-  public static void bindKeyEvent(JPanel objectPanel, String keyName, final int speed, final Consumer<JPanel> function) {
-    objectPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(keyName), keyName);
-    objectPanel.getActionMap().put(keyName, new AbstractAction() {
+  public static void bindKeyEvent(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel> function) {
+    jPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(keyName), keyName);
+    jPanel.getActionMap().put(keyName, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        ACTIONS.get(keyName).accept(objectPanel, speed);
+        ACTIONS.get(keyName).accept(jPanel, speed);
         if (function != null) {
-          function.accept(objectPanel);
+          function.accept(jPanel);
         }
       }
     });
