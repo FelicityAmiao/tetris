@@ -40,9 +40,14 @@ public class ObjectPanel {
     objectPanel.add(getObject());
     objectPanel.add(Box.createRigidArea(new Dimension(Block.WIDTH,  Block.HEIGHT)));
     objectPanel.setOpaque(false);
+    bindKeyEvents(objectPanel);
+    return objectPanel;
+  }
+
+  private static void bindKeyEvents(JPanel objectPanel) {
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_DOWN, Y_SPEED, detectReachContainer);
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_LEFT, X_SPEED, null);
-    return objectPanel;
+    KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_RIGHT, X_SPEED, null);
   }
 
   private static JPanel getObject() {
