@@ -48,6 +48,7 @@ public class ObjectPanel {
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_DOWN, Y_SPEED, detectReachContainer);
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_LEFT, X_SPEED, detectReachContainer);
     KeyEventHelper.bindKeyEvent(objectPanel, KeyEventHelper.KEY_RIGHT, X_SPEED, detectReachContainer);
+    KeyEventHelper.bindKeyEventTimer(objectPanel, KeyEventHelper.KEY_SPACE, Y_SPEED, detectReachContainer);
   }
 
 }

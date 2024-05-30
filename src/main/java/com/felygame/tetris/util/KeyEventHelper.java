@@ -12,11 +12,15 @@ public class KeyEventHelper {
   public static final String KEY_DOWN = "DOWN";
   public static final String KEY_LEFT = "LEFT";
   public static final String KEY_RIGHT = "RIGHT";
+  public static final String KEY_SPACE = "SPACE";
+
+  public static final int DELAY = 1000;
 
   private static final Map<String, BiConsumer<JPanel, Integer>> ACTIONS = new HashMap<>(){{
     put(KEY_DOWN, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), jPanel.getY() + speed));
     put(KEY_LEFT, (jPanel, speed) -> jPanel.setLocation(jPanel.getX() - speed, jPanel.getY()));
     put(KEY_RIGHT, (jPanel, speed) -> jPanel.setLocation(jPanel.getX() + speed, jPanel.getY()));
+    put(KEY_SPACE, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), jPanel.getY() + speed));
   }};
 
   public static void bindKeyEvent(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel> function) {
@@ -29,5 +33,12 @@ public class KeyEventHelper {
         }
       }
     });
+  }
+
+  public static void bindKeyEventTimer(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel> function) {
+    bindKeyEvent(jPanel, keyName, speed, function);
+    new Timer(DELAY, e -> {
+      jPanel.getActionMap().get(keyName).actionPerformed(null);
+    }).start();
   }
 }
