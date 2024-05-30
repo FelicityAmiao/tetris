@@ -6,6 +6,6 @@ import javax.swing.*;
 
 public class ContainerPanel {
   public static JPanel create() {
-    return GridBlock.create(1, 1);
+    return GridBlock.create(1, 2);
   }
 }
