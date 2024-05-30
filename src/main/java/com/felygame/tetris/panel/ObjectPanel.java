@@ -6,12 +6,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+import static com.felygame.tetris.enums.Color.LIGHT_DARK_ORIGIN;
+
 public class ObjectPanel {
 
   public static final int Y_SPEED = 30;
 
   public static JPanel create() {
-    JPanel objectPanel = Block.create(new Color(255, 125, 0));
+    JPanel objectPanel = Block.create(LIGHT_DARK_ORIGIN);
     objectPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("DOWN"), "moveDown");
     objectPanel.getActionMap().put("moveDown", getAction(objectPanel));
     return objectPanel;
