@@ -12,6 +12,12 @@ public class Block extends JPanel {
     return new Block();
   }
 
+  public static JPanel create(Color color) {
+    JPanel block = create();
+    block.setBackground(color);
+    return block;
+  }
+
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);

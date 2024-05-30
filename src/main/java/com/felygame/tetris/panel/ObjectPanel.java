@@ -11,7 +11,7 @@ public class ObjectPanel {
   public static final int Y_SPEED = 30;
 
   public static JPanel create() {
-    JPanel objectPanel = Block.create();
+    JPanel objectPanel = Block.create(new Color(255, 125, 0));
     objectPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("DOWN"), "moveDown");
     objectPanel.getActionMap().put("moveDown", getAction(objectPanel));
     return objectPanel;
