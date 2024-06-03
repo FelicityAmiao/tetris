@@ -34,7 +34,7 @@ public class DetectHelper {
   }
 
   private static boolean notReachMainPanelBottom(JPanel jpanel) {
-    return jpanel.getLocation().getY() + jpanel.getHeight() < TOTAL_HEIGHT;
+    return jpanel.getLocation().getY() + jpanel.getHeight() <= TOTAL_HEIGHT;
   }
 
   private static void sticky(JPanel jpanel) {
