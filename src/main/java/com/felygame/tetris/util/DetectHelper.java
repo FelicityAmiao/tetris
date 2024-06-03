@@ -1,30 +1,28 @@
 package com.felygame.tetris.util;
 
 import javax.swing.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
 
 import static com.felygame.tetris.panel.ObjectPanel.TOTAL_HEIGHT;
 
 public class DetectHelper {
 
-  private static final Consumer<JPanel> detectReachContainer = (jpanel -> {
-    if (notReachMainPanelBottom(jpanel)) {
-      return;
-    }
-    gameOver();
-  });
-
-  private static Consumer<JPanel> detectSticky = (jpanel -> {
-    if (notReachMainPanelBottom(jpanel)) {
-      return;
-    }
-    sticky(jpanel);
-  });
-
-  public static Consumer[] detects = new Consumer[]{
-      detectReachContainer,
-      detectSticky
-  };
+  public static List<Consumer<JPanel>> detects = Arrays.asList(
+      (jpanel -> {
+        if (notReachMainPanelBottom(jpanel)) {
+          return;
+        }
+        gameOver();
+      }),
+      (jpanel -> {
+        if (notReachMainPanelBottom(jpanel)) {
+          return;
+        }
+        sticky(jpanel);
+      })
+  );
 
   private static void gameOver() {
     SwingUtilities.invokeLater(() -> {

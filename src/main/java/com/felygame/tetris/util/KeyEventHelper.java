@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -24,19 +25,19 @@ public class KeyEventHelper {
     put(KEY_SPACE, (jPanel, speed) -> jPanel.setLocation(jPanel.getX(), speed));
   }};
 
-  public static void bindKeyEvent(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel>... functions) {
+  public static void bindKeyEvent(JPanel jPanel, String keyName, final int speed, final List<Consumer<JPanel>> functions) {
     jPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(keyName), keyName);
     jPanel.getActionMap().put(keyName, new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         ACTIONS.get(keyName).accept(jPanel, speed);
         if (functions != null) {
-          Arrays.stream(functions).forEach(function -> function.accept(jPanel));
+          functions.stream().forEach(function -> function.accept(jPanel));
         }
       }
     });
   }
 
-  public static void bindKeyEventTimer(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel>... functions) {
+  public static void bindKeyEventTimer(JPanel jPanel, String keyName, final int speed, final List<Consumer<JPanel>> functions) {
     bindKeyEvent(jPanel, keyName, speed, functions);
     new Timer(DELAY, e -> {
       Action action = jPanel.getActionMap().get(keyName);
