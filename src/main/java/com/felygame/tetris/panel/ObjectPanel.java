@@ -16,10 +16,6 @@ public class ObjectPanel {
   private static final int X_SPEED = 30;
 
   private static final Consumer<JPanel> detectReachContainer = (jpanel -> {
-    Container parent = jpanel.getParent();
-    if (parent == null) {
-      return;
-    }
     Point objectLocation = jpanel.getLocation();
     if (objectLocation.getY() + jpanel.getHeight() < TOTAL_HEIGHT) {
       return;
