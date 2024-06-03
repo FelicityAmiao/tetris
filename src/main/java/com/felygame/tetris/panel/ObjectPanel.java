@@ -20,13 +20,8 @@ public class ObjectPanel {
     if (parent == null) {
       return;
     }
-    Component containerPanel = parent.getComponent(parent.getComponentCount() - 1);
-    if (!(containerPanel instanceof JPanel)) {
-      return;
-    }
-    Point containerLocation = containerPanel.getLocation();
     Point objectLocation = jpanel.getLocation();
-    if (!containerLocation.equals(objectLocation)) {
+    if (objectLocation.getY() + jpanel.getHeight() < TOTAL_HEIGHT) {
       return;
     }
     SwingUtilities.invokeLater(() -> {
