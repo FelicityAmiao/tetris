@@ -34,7 +34,25 @@ public class ObjectPanel {
       System.exit(0);
     });
   });
-  private static Consumer[] detects = new Consumer[]{detectReachContainer};
+  private static Consumer<JPanel> detectSticky = (jpanel -> {
+    Point objectLocation = jpanel.getLocation();
+    if (objectLocation.getY() + jpanel.getHeight() < TOTAL_HEIGHT) {
+      return;
+    }
+    sticky(jpanel);
+  });
+
+  private static void sticky(JPanel jpanel) {
+    KeyEventHelper.unbindKeyEvent(jpanel, KeyEventHelper.KEY_DOWN);
+    KeyEventHelper.unbindKeyEvent(jpanel, KeyEventHelper.KEY_LEFT);
+    KeyEventHelper.unbindKeyEvent(jpanel, KeyEventHelper.KEY_RIGHT);
+    KeyEventHelper.unbindKeyEvent(jpanel, KeyEventHelper.KEY_SPACE);
+  }
+
+  private static Consumer[] detects = new Consumer[]{
+      detectReachContainer,
+      detectSticky
+  };
 
   public static JPanel create() {
     JPanel objectPanel = new JPanel();

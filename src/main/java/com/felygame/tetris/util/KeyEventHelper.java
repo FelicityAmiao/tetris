@@ -39,7 +39,24 @@ public class KeyEventHelper {
   public static void bindKeyEventTimer(JPanel jPanel, String keyName, final int speed, final Consumer<JPanel>... functions) {
     bindKeyEvent(jPanel, keyName, speed, functions);
     new Timer(DELAY, e -> {
-      jPanel.getActionMap().get(keyName).actionPerformed(null);
+      Action action = jPanel.getActionMap().get(keyName);
+      if (action != null) {
+        action.actionPerformed(null);
+      }
     }).start();
+  }
+
+  public static void unbindKeyEvent(JPanel jPanel, String keyName) {
+    KeyStroke keyStroke = KeyStroke.getKeyStroke(keyName);
+    InputMap inputMap = jPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+    ActionMap actionMap = jPanel.getActionMap();
+
+    if (inputMap != null && actionMap != null && keyStroke != null) {
+      Object actionKey = inputMap.get(keyStroke);
+      inputMap.remove(keyStroke);
+      if (actionKey != null) {
+        actionMap.remove(actionKey);
+      }
+    }
   }
 }
