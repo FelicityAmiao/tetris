@@ -14,13 +14,14 @@ public class ObjectPanel {
   public static final int TOTAL_HEIGHT = 501;
   public static final int Y_SPEED = 30;
   private static final int X_SPEED = 30;
+  public static final int OBJECT_X = 221;
+  public static final int OBJECT_Y = 81;
 
   public static JPanel create() {
     JPanel objectPanel = new JPanel();
     objectPanel.setLayout(new BoxLayout(objectPanel, BoxLayout.X_AXIS));
+    objectPanel.setLocation(new Point(OBJECT_X, OBJECT_Y));
     objectPanel.add(Block.create(LIGHT_DARK_ORIGIN));
-    objectPanel.add(Box.createRigidArea(new Dimension(Block.WIDTH, Block.HEIGHT)));
-    objectPanel.setOpaque(false);
     bindKeyEvents(objectPanel);
     return objectPanel;
   }

@@ -12,8 +12,6 @@ public class MainPanel {
         BorderFactory.createLineBorder(new Color(175, 175, 125))
     ));
     mainPanel.add(ObjectPanel.create());
-    mainPanel.add(Box.createVerticalGlue());
-    mainPanel.add(ContainerPanel.create());
     return mainPanel;
   }
 

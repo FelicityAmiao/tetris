@@ -9,11 +9,11 @@ public class Block extends JPanel {
   public static final int HEIGHT = 30;
 
   public static JPanel create() {
-    return new Block();
+    return create(Color.BLACK);
   }
 
   public static JPanel create(Color color) {
-    JPanel block = create();
+    JPanel block = new Block();
     block.setBackground(color);
     return block;
   }
