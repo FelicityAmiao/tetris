@@ -1,0 +1,32 @@
+:root {
+    --main-background: darkslategray;
+    --main-border: black;
+    --block-border: lightyellow;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    height: 90vh;
+    width: 50rem;
+    border: 1px solid var(--main-border);
+    background: var(--main-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block {
+    border: 1px solid var(--block-border);
+    width: 2rem;
+    height: 2rem;
+}
