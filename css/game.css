@@ -17,8 +17,9 @@ body {
 
 .main {
     height: 90vh;
-    width: 50rem;
+    width: 60rem;
     border: 1px solid var(--main-border);
+    padding: 2rem;
     background: var(--main-background);
     display: flex;
     flex-direction: column;
@@ -27,6 +28,6 @@ body {
 
 .block {
     border: 1px solid var(--block-border);
-    width: 2rem;
-    height: 2rem;
+    width: 4rem;
+    height: 4rem;
 }
