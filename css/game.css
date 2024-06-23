@@ -1,6 +1,6 @@
 :root {
-    --block-size: 4rem;
-    --block-border-size: 2rem;
+    --block-size: 46px;
+    --block-border-size: 2px;
     --main-background: darkslategray;
     --main-border: black;
     --block-border: lightyellow;
@@ -18,7 +18,7 @@ body {
 }
 
 .main {
-    height: 90vh;
+    height: 1050px;
     width: 50rem;
     border: 1px solid var(--main-border);
     background: var(--main-background);
