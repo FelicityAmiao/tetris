@@ -1,4 +1,6 @@
 :root {
+    --block-size: 4rem;
+    --block-border-size: 2rem;
     --main-background: darkslategray;
     --main-border: black;
     --block-border: lightyellow;
@@ -26,7 +28,7 @@ body {
 }
 
 .block {
-    border: 1px solid var(--block-border);
-    width: 2rem;
-    height: 2rem;
+    border: var(--block-border-size) solid var(--block-border);
+    width: var(--block-size);
+    height: var(--block-size);
 }
