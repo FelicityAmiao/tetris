@@ -11,13 +11,14 @@ function land(block) {
     return;
   }
   let action = window.KEY_SPACE;
-  block.style[action.direction] = getBoundaryHeight() + 'px';
+  let boundaryHeight = getBoundaryHeight();
+  let oneBlockHeight = calculateBlockHeights([getElement('.block')]);
+  block.style[action.direction] = boundaryHeight - oneBlockHeight + 'px';
 }
 
 function getBoundaryHeight() {
-  let main = getElement('.main');
-  let mainHeight = calculateTotalHeight(main);
-  let landBlockTotalHeight = calculateBlockHeights(main.children);
+  let mainHeight = calculateTotalHeight(getElement('.main'));
+  let landBlockTotalHeight = calculateBlockHeights(document.querySelectorAll('.land-block'));
   return mainHeight - landBlockTotalHeight;
 }
 
@@ -40,25 +41,28 @@ function afterLand(block) {
   initBlockEvents();
 }
 
+function drop(block, moveCallBack) {
+  moveCallBack();
+  if (isLand(block)) {
+    afterLand(block);
+  }
+}
+
 function initBlockEvents() {
   let block = getElement('.block');
   block.focus();
   block.addEventListener("keydown", (event) => {
     if (event.key === window.KEY_DOWN.key) {
-      move(block, window.KEY_DOWN);
-      if (isLand(block)) {
-        afterLand(block);
-      }
+      drop(block, () => move(block, window.KEY_DOWN));
     }
     if (event.key === window.KEY_SPACE.key) {
-      land(block);
-      afterLand(block);
+      drop(block, () => land(block));
     }
   });
   setScheduler(
-    () => move(block, window.KEY_DOWN),
+    () => drop(block, () => move(block, window.KEY_DOWN)),
     () => isLand(block),
-    1000
+    500
   );
 }
 
