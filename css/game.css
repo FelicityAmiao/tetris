@@ -1,5 +1,5 @@
 :root {
-    --block-size: 46px;
+    --block-size: 50px;
     --block-border-size: 2px;
     --main-background: darkslategray;
     --main-border: black;
@@ -20,7 +20,6 @@ body {
 .main {
     height: 1050px;
     width: 50rem;
-    border: 1px solid var(--main-border);
     background: var(--main-background);
     display: flex;
     flex-direction: column;
