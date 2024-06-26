@@ -24,10 +24,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
-.block {
+.block, .land-block {
     border: var(--block-border-size) solid var(--block-border);
     width: var(--block-size);
     height: var(--block-size);
+}
+
+.land-block {
+    position: absolute;
 }
