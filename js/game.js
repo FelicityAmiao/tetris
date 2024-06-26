@@ -1,4 +1,7 @@
 function move(block, action) {
+  if (isLand(block)) {
+    return;
+  }
   let currentLocation = parseInt(block.style[action.direction]) || 0;
   block.style[action.direction] = currentLocation + action.step + 'px';
 }
