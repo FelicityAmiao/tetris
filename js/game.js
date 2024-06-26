@@ -65,7 +65,7 @@ function initBlockEvents() {
   setScheduler(
     ()  => drop(block, () => move(block, window.KEY_DOWN)),
     () => isLand(block),
-    500
+    20
   );
 }
 
