@@ -1,10 +1,3 @@
-function calculateTotalHeight(element) {
-  let style = window.getComputedStyle(element);
-  let marginTop = parseInt(style.marginTop, 10);
-  let marginBottom = parseInt(style.marginBottom, 10);
-  return element.offsetHeight + marginTop + marginBottom;
-}
-
 function moveDown(block, action) {
   let currentLocation = parseInt(block.style[action.direction]) || 0;
   block.style[action.direction] = currentLocation + action.step + 'px';
@@ -14,10 +7,6 @@ function isLand(block, main) {
   let blockHeight = calculateTotalHeight(block);
   let mainHeight = calculateTotalHeight(main);
   return blockHeight >= mainHeight;
-}
-
-function getElement(selector) {
-  return document.querySelector(selector);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
