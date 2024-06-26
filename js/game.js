@@ -36,6 +36,9 @@ function release(block) {
 
 function afterLand(block) {
   release(block);
+  if (getElement('.block') !== null) {
+    return;
+  }
   let nextBlock = createDivOnFocus('block');
   block.parentNode.prepend(nextBlock);
   initBlockEvents();
@@ -62,7 +65,7 @@ function initBlockEvents() {
   setScheduler(
     ()  => drop(block, () => move(block, window.KEY_DOWN)),
     () => isLand(block),
-    500
+    20
   );
 }
 
