@@ -36,6 +36,9 @@ function release(block) {
 
 function afterLand(block) {
   release(block);
+  if (getElement('.block') !== null) {
+    return;
+  }
   let nextBlock = createDivOnFocus('block');
   block.parentNode.prepend(nextBlock);
   initBlockEvents();
