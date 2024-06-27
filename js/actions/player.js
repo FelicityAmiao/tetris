@@ -1,3 +1,20 @@
+function addPlayerEvents(block) {
+  block.addEventListener("keydown", (event) => {
+    if (event.key === window.KEY_DOWN.key) {
+      drop(block, () => move(block, window.KEY_DOWN));
+    }
+    if (event.key === window.KEY_SPACE.key) {
+      drop(block, () => land(block));
+    }
+    if (event.key === window.KEY_LEFT.key) {
+      move(block, window.KEY_LEFT);
+    }
+    if (event.key === window.KEY_RIGHT.key) {
+      move(block, window.KEY_RIGHT);
+    }
+  });
+}
+
 function move(block, action) {
   if (action.boundaryCheck(block)) {
     return;
