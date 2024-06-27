@@ -27,12 +27,12 @@ body {
     position: relative;
 }
 
-.block, .land-block {
+.block, [class^="land-block"] {
     border: var(--block-border-size) solid var(--block-border);
     width: var(--block-size);
     height: var(--block-size);
 }
 
-.land-block {
+[class^="land-block"] {
     position: absolute;
 }

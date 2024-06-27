@@ -10,6 +10,12 @@ function isWall(block) {
 
 function getBoundaryHeight() {
   let mainHeight = calculateTotalHeight(getElement('.main'));
-  let landBlockTotalHeight = calculateElementHeights(document.querySelectorAll('.land-block'));
+  let landBlockTotalHeight = calculateElementHeights(document.querySelectorAll('[class^="land-block"]'));
   return mainHeight - landBlockTotalHeight;
+}
+
+function getColBoundaryHeight() {
+  let mainHeight = calculateTotalHeight(getElement('.main'));
+  let colLandBlockTotalHeight = calculateElementHeights(document.querySelectorAll('.land-block-Col1'));
+  return mainHeight - colLandBlockTotalHeight;
 }

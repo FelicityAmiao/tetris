@@ -1,6 +1,6 @@
 function release(block) {
   block.blur();
-  block.className = 'land-block';
+  block.className = 'land-block-Col1';
   block.tabIndex = -1;
 }
 
