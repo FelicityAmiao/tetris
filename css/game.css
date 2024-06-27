@@ -19,7 +19,7 @@ body {
 
 .main {
     height: 1050px;
-    width: 50rem;
+    width: 850px;
     background: var(--main-background);
     display: flex;
     flex-direction: column;

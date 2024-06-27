@@ -1,5 +1,5 @@
 function move(block, action) {
-  if (isLand(block)) {
+  if (action.boundaryCheck(block)) {
     return;
   }
   let currentMove = parseInt(block.style[action.direction]) || 0;

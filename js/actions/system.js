@@ -24,10 +24,13 @@ function initBlockEvents() {
     if (event.key === window.KEY_SPACE.key) {
       drop(block, () => land(block));
     }
+    if (event.key === window.KEY_LEFT.key) {
+      move(block, window.KEY_LEFT);
+    }
   });
-  setScheduler(
-    ()  => drop(block, () => move(block, window.KEY_DOWN)),
-    () => isLand(block),
-    500
-  );
+  // setScheduler(
+  //   ()  => drop(block, () => move(block, window.KEY_DOWN)),
+  //   () => isLand(block),
+  //   500
+  // );
 }
