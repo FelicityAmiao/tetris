@@ -27,6 +27,9 @@ function initBlockEvents() {
     if (event.key === window.KEY_LEFT.key) {
       move(block, window.KEY_LEFT);
     }
+    if (event.key === window.KEY_RIGHT.key) {
+      move(block, window.KEY_RIGHT);
+    }
   });
   // setScheduler(
   //   ()  => drop(block, () => move(block, window.KEY_DOWN)),
