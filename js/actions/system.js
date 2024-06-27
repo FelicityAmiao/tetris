@@ -24,3 +24,10 @@ function initBlockEvents() {
   //   500
   // );
 }
+
+function processLand(block, moveCallBack) {
+  moveCallBack();
+  if (isLand(block)) {
+    afterLand(block);
+  }
+}
