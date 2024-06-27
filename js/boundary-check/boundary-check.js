@@ -4,8 +4,12 @@ function isLand(block) {
   return blockHeight >= boundaryHeight;
 }
 
-function isWall(block) {
-  return block.offsetLeft <= 0 || block.offsetLeft + block.offsetWidth >= block.offsetParent.offsetWidth;
+function isLeftWall(block) {
+  return block.offsetLeft <= 0;
+}
+
+function isRightWall(block) {
+  return block.offsetLeft + block.offsetWidth >= block.offsetParent.offsetWidth;
 }
 
 function getBoundaryHeight() {
