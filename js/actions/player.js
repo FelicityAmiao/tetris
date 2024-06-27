@@ -28,7 +28,7 @@ function land(block) {
     return;
   }
   let action = window.KEY_SPACE;
-  let boundaryHeight = getBoundaryHeight();
+  let boundaryHeight = getColBoundaryHeight(block);
   let oneBlockHeight = calculateElementHeights([getElement('.block')]);
   block.style[action.direction] = boundaryHeight - oneBlockHeight + 'px';
 }

@@ -1,5 +1,5 @@
 function isLand(block) {
-  let boundaryHeight = getBoundaryHeight();
+  let boundaryHeight = getColBoundaryHeight(block);
   let blockHeight = calculateTotalHeight(block);
   return blockHeight >= boundaryHeight;
 }
@@ -12,14 +12,8 @@ function isRightWall(block) {
   return block.offsetLeft + block.offsetWidth >= block.offsetParent.offsetWidth;
 }
 
-function getBoundaryHeight() {
+function getColBoundaryHeight(block) {
   let mainHeight = calculateTotalHeight(getElement('.main'));
-  let landBlockTotalHeight = calculateElementHeights(document.querySelectorAll('[class^="land-block"]'));
-  return mainHeight - landBlockTotalHeight;
-}
-
-function getColBoundaryHeight() {
-  let mainHeight = calculateTotalHeight(getElement('.main'));
-  let colLandBlockTotalHeight = calculateElementHeights(document.querySelectorAll('.land-block-Col1'));
+  let colLandBlockTotalHeight = calculateElementHeights(document.querySelectorAll('.land-block-Col' + getColNumber(block)));
   return mainHeight - colLandBlockTotalHeight;
 }
