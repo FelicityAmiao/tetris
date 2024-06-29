@@ -1,5 +1,8 @@
 :root {
-    --block-size: 50px;
+    --main-width: 250px;
+    --main-height: 1050px;
+    --block-width: 50px;
+    --block-height: 50px;
     --block-border-size: 2px;
     --main-background: darkslategray;
     --main-border: black;
@@ -18,8 +21,8 @@ body {
 }
 
 .main {
-    height: 1050px;
-    width: 850px;
+    width: var(--main-width);
+    height: var(--main-height);
     background: var(--main-background);
     display: flex;
     flex-direction: column;
@@ -29,8 +32,8 @@ body {
 
 .block, [class^="land-block"] {
     border: var(--block-border-size) solid var(--block-border);
-    width: var(--block-size);
-    height: var(--block-size);
+    width: var(--block-width);
+    height: var(--block-height);
 }
 
 [class^="land-block"] {

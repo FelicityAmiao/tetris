@@ -23,3 +23,8 @@ function createDivOnFocus(className) {
   div.tabIndex = 1;
   return div;
 }
+
+function getCssVariable(propertyName) {
+  let rootStyle = getComputedStyle(document.documentElement);
+  return rootStyle.getPropertyValue(propertyName).trim();
+}
