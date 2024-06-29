@@ -11,27 +11,25 @@ function createNextBlock(parentNode) {
 }
 
 function removeFullLine(landBlocks) {
-  console.log('Full line');
+  for (let landBlock of landBlocks) {
+    landBlock.remove();
+  }
 }
 
 function processIfCurrentLineFull(block) {
   let landBlockInLine = getElements('[class*="-Row' + (getRowNumber(block) - 1) + '"]');
-  if (landBlockInLine.length === mainCols) {
+  if (landBlockInLine.length === window.mainCols) {
     removeFullLine(landBlockInLine);
   }
 }
 
-function processCurrentBlock(block) {
-  release(block);
-  processIfCurrentLineFull(block);
-}
-
 function afterLand(block) {
-  processCurrentBlock(block);
+  release(block);
   if (getElement('.block') !== null) {
     return;
   }
   createNextBlock(block.parentNode);
+  processIfCurrentLineFull(block);
 }
 
 function initBlockEvents() {
