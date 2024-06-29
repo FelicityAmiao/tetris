@@ -1,6 +1,6 @@
 function release(block) {
   block.blur();
-  block.className = 'land-block-Col' + getColNumber(block);
+  block.className = 'land-block-Col' + getColNumber(block) + '-Row' + getRowNumber(block);
   block.tabIndex = -1;
 }
 
@@ -14,16 +14,16 @@ function removeFullLine(landBlocks) {
   console.log('Full line');
 }
 
-function processIfFullLine() {
-  let landBlocks = document.querySelectorAll('[class^="land-block"]');
-  if (landBlocks.length === mainCols) {
-    removeFullLine(landBlocks);
+function processIfCurrentLineFull(block) {
+  let landBlockInLine = getElements('[class*="-Row' + (getRowNumber(block) - 1) + '"]');
+  if (landBlockInLine.length === mainCols) {
+    removeFullLine(landBlockInLine);
   }
 }
 
 function processCurrentBlock(block) {
   release(block);
-  processIfFullLine();
+  processIfCurrentLineFull(block);
 }
 
 function afterLand(block) {

@@ -2,6 +2,10 @@ function getElement(selector) {
   return document.querySelector(selector);
 }
 
+function getElements(selector) {
+  return document.querySelectorAll(selector);
+}
+
 function calculateTotalHeight(element) {
   let style = window.getComputedStyle(element);
   let marginTop = parseInt(style.marginTop, 10);

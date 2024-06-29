@@ -14,6 +14,6 @@ function isRightWall(block) {
 
 function getColBoundaryHeight(block) {
   let mainHeight = calculateTotalHeight(getElement('.main'));
-  let colLandBlockTotalHeight = calculateElementHeights(document.querySelectorAll('.land-block-Col' + getColNumber(block)));
+  let colLandBlockTotalHeight = calculateElementHeights(currentBottomLandBlocks(block));
   return mainHeight - colLandBlockTotalHeight;
 }
