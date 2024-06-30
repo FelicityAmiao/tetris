@@ -1,6 +1,7 @@
 # Project Introduction
 My First Game: Remake Tetris by MVP every release.
-1. Release 1: Tetris-OneBlock-0.1: What player can control is a block, player can do what tetris has by a block.
+1. Release 1: Tetris-OneBlock-0.1: <br>
+  What player can control is a block, player can do what tetris has by a block.
   - move left, right, down
   - land the block
   - clear the line
