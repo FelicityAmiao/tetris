@@ -1,0 +1,21 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "My First Game: Remake Tetris by MVP every release.\r 1. Release 1: Tetris-OneBlock-0.1.jar\r    - Container: One Block\r    - Control Object: One Block\r    - Player Operation: Down\r    - Game Clear: Move control block drop into container block, then win the game.\r 2. Release 2: Tetris-Puzzle-0.2.jar\r    - Container: Two Block\r    - Control Object: One Block Per Time\r    - Player Operation: Down, Left, Right\r    - Game Clear: Move control block to fill container block, then win the game.",
+  "main": "index.js",
+  "scripts": {
+    "start": "grunt && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fely",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2",
+    "grunt": "^1.6.1",
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-string-replace": "^1.3.3",
+    "nodemon": "^3.1.4"
+  }
+}
